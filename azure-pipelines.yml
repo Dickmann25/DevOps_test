@@ -15,6 +15,6 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      cd C:\users\joao\Documents
-      git clone https://github.com/Dickmann25/DevOps_test.git
+      cd C:\Users\joao\Documents\DevOps_test
+      git pull origin main
       
