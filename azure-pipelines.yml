@@ -7,18 +7,11 @@ trigger:
 - main
 
 pool:
-  vmImage: windows-latest
+  name: 'MyAgentPool'
+  demands:
+    -npm
 
 steps:
-- task: AzureCLI@2
-  inputs:
-    azureSubscription: 'Azure for Students(6e57b072-ba3d-47a7-9e41-bf68eb9503bd)'
-    scriptType: 'ps'
-    scriptLocation: 'inlineScript'
-    inlineScript: |
-      $VM_IP = (az vm show -d -g MyResourceGroup -n MyVM --query publicIps -o tsv)
-      Write-Host "VM IP: $VM_IP"
-
 - task: AzureCLI@2
   inputs:
     azureSubscription: 'Azure for Students(6e57b072-ba3d-47a7-9e41-bf68eb9503bd)'
@@ -28,4 +21,3 @@ steps:
       cd C:\users\joao\Documents
       git clone https://github.com/Dickmann25/DevOps_test.git
       
-      p2waxs2643cdxo6wntvwi4x2fzctcwbxnphyqcjpgqvqrf2b7ou
