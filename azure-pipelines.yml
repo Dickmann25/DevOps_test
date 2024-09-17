@@ -8,8 +8,7 @@ trigger:
 
 pool:
   name: 'MyAgentPool'
-  demands:
-    -npm
+  
 
 steps:
 - task: AzureCLI@2
