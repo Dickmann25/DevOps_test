@@ -11,12 +11,10 @@ pool:
   
 
 steps:
-- task: AzureCLI@2
+- task: PowerShell@2
   inputs:
-    azureSubscription: 'Azure for Students(6e57b072-ba3d-47a7-9e41-bf68eb9503bd)'
-    scriptType: 'ps'
-    scriptLocation: 'inlineScript'
-    inlineScript: |
+    targetType: 'inline'
+    script: |
       cd C:\users\joao\Documents
       git clone https://github.com/Dickmann25/DevOps_test.git
       
